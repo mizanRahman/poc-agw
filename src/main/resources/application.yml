@@ -1,0 +1,20 @@
+server:
+  port: 9000
+zuul:
+  routes:
+    card-service:
+      url: http://localhost:4010
+
+logging.level:
+    com.example: debug
+    org.springframework.cloud.netflix.zuul: warn
+
+gateway:
+  enabled: true
+  user-sensitive-apis:
+    member-delete:
+      method: POST
+      url: /api/users/delete
+    option-card-delete:
+      method: POST
+      url: /api/users/delete
