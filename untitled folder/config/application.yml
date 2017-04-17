@@ -1,0 +1,27 @@
+server:
+  port: 9000
+zuul:
+  routes:
+    card-service:
+      url: http://localhost:4010
+    card-service2:
+          url: http://localhost:4011
+    httpbin:
+      url: http://httpbin.org
+    httpbin33:
+      url: http://mizan.org
+
+
+logging.level:
+    com.example: debug
+    org.springframework.cloud.netflix.zuul: warn
+
+gateway:
+  enabled: true
+  user-sensitive-apis:
+    member-delete:
+      method: POST
+      url: /api/users/delete
+    option-card-delete:
+      method: POST
+      url: /api/users/delete

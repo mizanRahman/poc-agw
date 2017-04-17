@@ -1,9 +1,20 @@
 server:
   port: 9000
+
+
 zuul:
   routes:
     card-service:
       url: http://localhost:4010
+    card-service2:
+      url: http://localhost:4011
+    httpbin:
+      path: /api/v2/**
+      url: http://httpbin.org
+    httpbin2:
+      path: /api/v2/test
+      url: http://www.mocky.io/v2/58f51040100000531a68cbda
+
 
 logging.level:
     com.example: debug
@@ -18,3 +29,29 @@ gateway:
     option-card-delete:
       method: POST
       url: /api/users/delete
+
+management:
+  port: 9001
+  security:
+    enabled: true
+    roles: SUPERUSER
+
+
+security:
+  user:
+    name: admin
+    password: konai
+    role: SUPERUSER
+
+
+
+
+#Health endpoint custom to get all components status
+endpoints:
+  refresh:
+    sensitive: true
+
+
+logging:
+  file: application.log
+  path: log

@@ -1,0 +1,5 @@
+- dynamic route loader - ok
+- undertow
+- zetty
+- groovy based filter
+- load route path from database and ui for this

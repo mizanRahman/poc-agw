@@ -5,7 +5,6 @@ import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,7 +12,7 @@ import java.util.Map;
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "gateway")
+@ConfigurationProperties(prefix = "gateway", ignoreUnknownFields = true)
 public class GatewayProperties {
     private boolean enabled = true;
     private Map<String, UserSensitiveApi> userSensitiveApis;

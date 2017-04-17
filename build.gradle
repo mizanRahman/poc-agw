@@ -16,7 +16,7 @@ apply plugin: 'org.springframework.boot'
 
 jar {
 	baseName = 'gateway'
-	version = '0.0.1-SNAPSHOT'
+	version = '1.0'
 }
 
 sourceCompatibility = 1.8
@@ -25,15 +25,27 @@ repositories {
 	mavenCentral()
 }
 
+configurations {
+	compile.exclude module: "spring-boot-starter-tomcat"
+}
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-actuator')
-	compile('org.springframework.cloud:spring-cloud-starter-zuul')
 	compile('org.springframework.boot:spring-boot-starter-web')
+//	compile("org.springframework.boot:spring-boot-starter-jetty:1.5.2.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-undertow:1.5.2.RELEASE")
+
+	compile('org.springframework.cloud:spring-cloud-starter-zuul')
+
+	compile('org.springframework.boot:spring-boot-starter-actuator')
 	runtime('com.h2database:h2')
 	compile('org.projectlombok:lombok')
 	compile('com.jayway.jsonpath:json-path:2.1.0')
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+springBoot {
+	executable = true
 }
 
 dependencyManagement {

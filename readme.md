@@ -1,1 +1,5 @@
-get http://localhost:9000/card-service/cards
+- dynamic route loader - ok
+- undertow- ok
+- zetty - ok
+- groovy based filter
+- load route path from database and ui for this

@@ -1,26 +1,66 @@
 package com.example;
 
-import com.netflix.zuul.ZuulFilter;
+import com.example.filter.DynamicRouteLocator;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
+import org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactory;
+import org.springframework.boot.context.embedded.undertow.UndertowBuilderCustomizer;
+import org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainerFactory;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.cloud.netflix.zuul.filters.post.SendErrorFilter;
-import org.springframework.cloud.netflix.zuul.filters.post.SendResponseFilter;
+import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
+import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @EnableZuulProxy
 @SpringBootApplication
 @Slf4j
 public class GatewayApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GatewayApplication.class, args);
-	}
+    @Autowired
+    ServerProperties serverProperties;
+
+    @Autowired
+    ZuulProperties zuulProperties;
+
+    public static void main(String[] args) {
+        SpringApplication.run(GatewayApplication.class, args);
+    }
+
+    @Bean
+    RouteLocator routeLocator() {
+        return new DynamicRouteLocator(serverProperties.getServletPath(), zuulProperties);
+    }
+
+//
+//    @Bean
+//    public JettyEmbeddedServletContainerFactory  jettyEmbeddedServletContainerFactory() {
+//        JettyEmbeddedServletContainerFactory jettyContainer =
+//                new JettyEmbeddedServletContainerFactory();
+//
+//        jettyContainer.setPort(serverProperties.getPort());
+//        jettyContainer.setContextPath(serverProperties.getContextPath());
+//        return jettyContainer;
+//    }
+//
+//
+//    @Bean
+//    public UndertowEmbeddedServletContainerFactory embeddedServletContainerFactory() {
+//        UndertowEmbeddedServletContainerFactory factory =
+//                new UndertowEmbeddedServletContainerFactory();
+//
+//        factory.addBuilderCustomizers(new UndertowBuilderCustomizer() {
+//            @Override
+//            public void customize(io.undertow.Undertow.Builder builder) {
+//                builder.addHttpListener(serverProperties.getPort(), "0.0.0.0");
+//            }
+//        });
+//
+//        return factory;
+//    }
+
 
 }
 
