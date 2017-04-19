@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
-import org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactory;
-import org.springframework.boot.context.embedded.undertow.UndertowBuilderCustomizer;
-import org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainerFactory;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
 import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @EnableZuulProxy
 @SpringBootApplication
@@ -25,6 +23,7 @@ public class GatewayApplication {
     @Autowired
     ZuulProperties zuulProperties;
 
+
     public static void main(String[] args) {
         SpringApplication.run(GatewayApplication.class, args);
     }
@@ -33,6 +32,8 @@ public class GatewayApplication {
     RouteLocator routeLocator() {
         return new DynamicRouteLocator(serverProperties.getServletPath(), zuulProperties);
     }
+
+
 
 //
 //    @Bean

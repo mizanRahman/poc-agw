@@ -42,8 +42,8 @@ security:
     name: admin
     password: konai
     role: SUPERUSER
-
-
+  basic:
+    enabled: false
 
 
 #Health endpoint custom to get all components status
@@ -51,7 +51,6 @@ endpoints:
   refresh:
     sensitive: true
 
+sms:
+  provider: infobip
 
-logging:
-  file: application.log
-  path: log

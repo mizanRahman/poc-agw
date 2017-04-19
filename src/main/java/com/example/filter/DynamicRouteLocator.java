@@ -1,6 +1,8 @@
 package com.example.filter;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.cloud.netflix.zuul.filters.RefreshableRouteLocator;
 import org.springframework.cloud.netflix.zuul.filters.SimpleRouteLocator;
 import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
@@ -38,5 +40,8 @@ public class DynamicRouteLocator extends SimpleRouteLocator implements Refreshab
     public void refresh() {
         doRefresh();
     }
+
+
+
 
 }
