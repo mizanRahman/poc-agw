@@ -12,6 +12,11 @@
 
 - logging: downstream request: RequestDecoratorFilter
 
+https://github.com/marcosbarbero/spring-cloud-starter-zuul-ratelimit
+- debug filter
+- logger filter: https://github.com/spring-cloud/spring-cloud-netflix/blob/master/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/zuul/filters/pre/PreDecorationFilter.java
+- maintain endpoint list as a MAP<Sndpoint,Boolean>. can be picked with O(1) time
+https://github.com/zalando/tracer
 
 
 

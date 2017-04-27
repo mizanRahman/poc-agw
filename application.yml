@@ -62,7 +62,7 @@ sms:
 g12:
   filter:
     log:
-      enabled: true
+      enabled: false
 
 
 
