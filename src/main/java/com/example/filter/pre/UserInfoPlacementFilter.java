@@ -3,12 +3,14 @@ package com.example.filter.pre;
 import com.example.FilterConstants;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by mizan on 4/9/17.
  */
 @Component
+@Slf4j
 public class UserInfoPlacementFilter extends ZuulFilter {
     @Override
     public String filterType() {
@@ -22,7 +24,7 @@ public class UserInfoPlacementFilter extends ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        return false;
+        return true;
     }
 
     @Override
@@ -34,6 +36,9 @@ public class UserInfoPlacementFilter extends ZuulFilter {
         ctx.addZuulRequestHeader("X-KM-User-Phone", "141234234");
 
         ctx.addZuulRequestHeader("X-KM-User-MpaId", "1432142");
+
+
+        log.info("user info placed");
 
         return null;
     }

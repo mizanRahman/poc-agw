@@ -94,6 +94,7 @@ public class ErrorResponseDecoratorFilter extends ZuulFilter {
         DocumentContext documentContext = JsonPath.parse(responseBody);
 
 
+
         errorResponse = getRegularResponse(documentContext);
         if (errorResponse != null) {
             log.debug("regular response: {}", ctx.getResponseBody());

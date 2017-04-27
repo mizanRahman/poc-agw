@@ -26,7 +26,7 @@ repositories {
 }
 
 configurations {
-	compile.exclude module: "spring-boot-starter-tomcat"
+//	compile.exclude module: "spring-boot-starter-tomcat"
 }
 
 ext {
@@ -37,7 +37,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-security')
 //	compile("org.springframework.boot:spring-boot-starter-jetty:1.5.2.RELEASE")
-	compile("org.springframework.boot:spring-boot-starter-undertow:${bootVersion}")
+//	compile("org.springframework.boot:spring-boot-starter-undertow:${bootVersion}")
 
 	compile('org.springframework.cloud:spring-cloud-starter-zuul')
 

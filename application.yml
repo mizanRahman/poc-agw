@@ -3,7 +3,6 @@ server:
 
 
 zuul:
-  ignored-services: "*"
   routes:
     card-service:
       url: http://localhost:4010
@@ -63,7 +62,7 @@ sms:
 g12:
   filter:
     log:
-      enabled: false
+      enabled: true
 
 
 

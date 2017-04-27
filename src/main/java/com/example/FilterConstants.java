@@ -10,7 +10,7 @@ public class FilterConstants {
     * post filters order
     * */
     public static final int ERROR_RESPONSE_FILTER_ORDER = 10;
-    public static final int RESPONSE_DECORATOR_FILTER_ORDER = 100;
+    public static final int RESPONSE_DECORATOR_FILTER_ORDER = -1;
 
 
     // Filter Type
@@ -19,4 +19,5 @@ public class FilterConstants {
     public static final String POST_TYPE="post";
 
 
+    public static final String G12_FILTER_LOG_ENABLED = "g12.filter.log.enabled";
 }
