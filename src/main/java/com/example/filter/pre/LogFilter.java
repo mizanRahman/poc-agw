@@ -1,20 +1,14 @@
 package com.example.filter.pre;
 
-import com.example.FilterConstants;
-import com.netflix.config.DynamicBooleanProperty;
-import com.netflix.config.DynamicPropertyFactory;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.Route;
 import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
+import org.springframework.cloud.netflix.zuul.filters.SimpleRouteLocator;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UrlPathHelper;
-
-import javax.servlet.http.HttpServletRequest;
-
-import static com.example.FilterConstants.G12_FILTER_LOG_ENABLED;
 
 /**
  * Created by mac on 1/15/17.
@@ -29,15 +23,14 @@ public class LogFilter extends ZuulFilter {
     private UrlPathHelper urlPathHelper = new UrlPathHelper();
 
 
-
     @Override
     public String filterType() {
-        return "pre";
+        return "route";
     }
 
     @Override
     public int filterOrder() {
-        return 1;
+        return 0;
     }
 
     @Override
@@ -59,6 +52,13 @@ public class LogFilter extends ZuulFilter {
         log.info("path : {}", route.getPath());
         log.info("prefix: {}", route.getPrefix());
         log.info("location: {}", route.getLocation());
+
+        log.info("{} {}{}", ctx.getRequest().getMethod(), route.getLocation(), route.getPath());
+        log.info("Headers: {}", ctx.getZuulRequestHeaders());
+        for (String header : ctx.getZuulRequestHeaders().keySet()) {
+            log.info("{}: {}", header, ctx.getZuulRequestHeaders().get(header));
+        }
+
         return null;
     }
 }

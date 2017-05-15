@@ -14,6 +14,9 @@ import java.util.Map;
 @Component
 @ConfigurationProperties(prefix = "gateway", ignoreUnknownFields = true)
 public class GatewayProperties {
+
+    private Long rateLimit = 10L;
+
     private boolean enabled = true;
     private Map<String, UserSensitiveApi> userSensitiveApis;
 

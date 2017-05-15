@@ -21,8 +21,8 @@
 2017-04-19 00:55:30.537  WARN 3673 --- [Test worker] .s.b.a.a.EndpointWebMvcAutoConfiguration : Could not start embedded management container on different port (management endpoints are still available through JMX)
 2017-04-19 00:55:30.696  INFO 3673 --- [Test worker] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
 2017-04-19 00:55:30.704  INFO 3673 --- [Test worker] ration$HystrixMetricsPollerConfiguration : Starting poller
-2017-04-19 00:55:30.733 DEBUG 3673 --- [Test worker] com.example.filter.DynamicRouteLocator   : reloading properties
-2017-04-19 00:55:30.733 DEBUG 3673 --- [Test worker] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 00:55:30.733 DEBUG 3673 --- [Test worker] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
+2017-04-19 00:55:30.733 DEBUG 3673 --- [Test worker] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-19 00:55:30.740  INFO 3673 --- [Test worker] com.example.GatewayApplicationTests      : Started GatewayApplicationTests in 8.172 seconds (JVM running for 9.455)
 2017-04-19 00:55:30.785  INFO 3673 --- [Thread-7] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@4b5675ad: startup date [Wed Apr 19 00:55:24 BDT 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@51cf15b
 2017-04-19 00:55:30.790  INFO 3673 --- [Thread-7] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
@@ -115,8 +115,8 @@
 2017-04-19 00:55:47.418  INFO 3706 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2017-04-19 00:55:47.420  INFO 3706 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2017-04-19 00:55:47.436  INFO 3706 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7b8b07ae: startup date [Wed Apr 19 00:55:46 BDT 2017]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@48a12036
-2017-04-19 00:55:47.496 DEBUG 3706 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
-2017-04-19 00:55:47.497 DEBUG 3706 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 00:55:47.496 DEBUG 3706 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
+2017-04-19 00:55:47.497 DEBUG 3706 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-19 00:55:47.501  INFO 3706 --- [main] application                              : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2017-04-19 00:55:47.501  INFO 3706 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2017-04-19 00:55:47.520  INFO 3706 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
@@ -125,8 +125,8 @@
 2017-04-19 00:55:47.859  INFO 3706 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
 2017-04-19 00:55:47.907  INFO 3706 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
 2017-04-19 00:55:47.912  INFO 3706 --- [main] ration$HystrixMetricsPollerConfiguration : Starting poller
-2017-04-19 00:55:47.917 DEBUG 3706 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
-2017-04-19 00:55:47.936 DEBUG 3706 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 00:55:47.917 DEBUG 3706 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
+2017-04-19 00:55:47.936 DEBUG 3706 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-19 00:55:47.940  INFO 3706 --- [main] application                              : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2017-04-19 00:55:47.940  INFO 3706 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2017-04-19 00:55:47.964  INFO 3706 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
@@ -234,8 +234,8 @@
 2017-04-19 00:57:29.079  INFO 3777 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2017-04-19 00:57:29.080  INFO 3777 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2017-04-19 00:57:29.142  INFO 3777 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7b8b07ae: startup date [Wed Apr 19 00:57:28 BDT 2017]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@48a12036
-2017-04-19 00:57:29.299 DEBUG 3777 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
-2017-04-19 00:57:29.300 DEBUG 3777 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 00:57:29.299 DEBUG 3777 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
+2017-04-19 00:57:29.300 DEBUG 3777 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-19 00:57:29.304  INFO 3777 --- [main] application                              : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2017-04-19 00:57:29.305  INFO 3777 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2017-04-19 00:57:29.321  INFO 3777 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
@@ -244,8 +244,8 @@
 2017-04-19 00:57:29.687  INFO 3777 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
 2017-04-19 00:57:29.736  INFO 3777 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
 2017-04-19 00:57:29.743  INFO 3777 --- [main] ration$HystrixMetricsPollerConfiguration : Starting poller
-2017-04-19 00:57:29.748 DEBUG 3777 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
-2017-04-19 00:57:29.765 DEBUG 3777 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 00:57:29.748 DEBUG 3777 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
+2017-04-19 00:57:29.765 DEBUG 3777 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-19 00:57:29.768  INFO 3777 --- [main] application                              : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2017-04-19 00:57:29.768  INFO 3777 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2017-04-19 00:57:29.795  INFO 3777 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
@@ -348,14 +348,14 @@
 2017-04-19 00:58:31.429  INFO 3816 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2017-04-19 00:58:31.431  INFO 3816 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2017-04-19 00:58:31.451  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@208f7165: startup date [Wed Apr 19 00:58:31 BDT 2017]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3f6db3fb
-2017-04-19 00:58:31.549 DEBUG 3816 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
-2017-04-19 00:58:31.550 DEBUG 3816 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 00:58:31.549 DEBUG 3816 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
+2017-04-19 00:58:31.550 DEBUG 3816 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-19 00:58:31.640  INFO 3816 --- [main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 9001 (http)
 2017-04-19 00:58:31.968  INFO 3816 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
 2017-04-19 00:58:32.025  INFO 3816 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
 2017-04-19 00:58:32.030  INFO 3816 --- [main] ration$HystrixMetricsPollerConfiguration : Starting poller
-2017-04-19 00:58:32.036 DEBUG 3816 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
-2017-04-19 00:58:32.058 DEBUG 3816 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 00:58:32.036 DEBUG 3816 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
+2017-04-19 00:58:32.058 DEBUG 3816 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-19 00:58:32.062  INFO 3816 --- [main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 9000 (http)
 2017-04-19 00:58:32.069  INFO 3816 --- [main] com.example.GatewayApplication           : Started GatewayApplication in 9.06 seconds (JVM running for 9.543)
 2017-04-19 00:58:52.337  INFO 3816 --- [Thread-4] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3f6db3fb: startup date [Wed Apr 19 00:58:24 BDT 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@41a2befb
@@ -454,14 +454,14 @@
 2017-04-19 01:01:58.776  INFO 3922 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2017-04-19 01:01:58.778  INFO 3922 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2017-04-19 01:01:58.796  INFO 3922 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3bf01a01: startup date [Wed Apr 19 01:01:58 BDT 2017]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1755e85b
-2017-04-19 01:01:58.854 DEBUG 3922 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
-2017-04-19 01:01:58.855 DEBUG 3922 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 01:01:58.854 DEBUG 3922 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
+2017-04-19 01:01:58.855 DEBUG 3922 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-19 01:01:58.920  INFO 3922 --- [main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 9001 (http)
 2017-04-19 01:01:59.222  INFO 3922 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
 2017-04-19 01:01:59.284  INFO 3922 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
 2017-04-19 01:01:59.289  INFO 3922 --- [main] ration$HystrixMetricsPollerConfiguration : Starting poller
-2017-04-19 01:01:59.296 DEBUG 3922 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
-2017-04-19 01:01:59.313 DEBUG 3922 --- [main] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 01:01:59.296 DEBUG 3922 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
+2017-04-19 01:01:59.313 DEBUG 3922 --- [main] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-19 01:01:59.326  INFO 3922 --- [main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 9000 (http)
 2017-04-19 01:01:59.336  INFO 3922 --- [main] com.example.GatewayApplication           : Started GatewayApplication in 9.24 seconds (JVM running for 9.719)
 2017-04-19 01:02:38.046  INFO 3922 --- [XNIO-3 task-1] io.undertow.servlet                      : Initializing Spring FrameworkServlet 'dispatcherServlet'
@@ -478,7 +478,7 @@
 2017-04-19 01:09:01.697  INFO 3922 --- [XNIO-2 task-8] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 2017-04-19 01:09:01.755  INFO 3922 --- [XNIO-2 task-8] o.s.boot.SpringApplication               : Started application in 0.701 seconds (JVM running for 432.122)
 2017-04-19 01:09:01.755  INFO 3922 --- [XNIO-2 task-8] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@7e5d12ad: startup date [Wed Apr 19 01:09:01 BDT 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6293b5c2
-2017-04-19 01:09:02.035 DEBUG 3922 --- [XNIO-2 task-8] com.example.filter.DynamicRouteLocator   : reloading properties
+2017-04-19 01:09:02.035 DEBUG 3922 --- [XNIO-2 task-8] com.example.dynamicroute.DynamicRouteLocator   : reloading properties
 2017-04-20 01:02:10.708  INFO 3922 --- [Thread-4] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1755e85b: startup date [Wed Apr 19 01:01:51 BDT 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@70325e14
 2017-04-20 01:02:10.734  INFO 3922 --- [Thread-4] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3bf01a01: startup date [Wed Apr 19 01:01:58 BDT 2017]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1755e85b
 2017-04-20 01:02:10.750  INFO 3922 --- [Thread-4] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'

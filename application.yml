@@ -12,18 +12,16 @@ zuul:
       path: /api/v2/**
       url: http://httpbin.org
     httpbin2:
-      path: /api/v2/test
-      url: http://www.mocky.io/v2/58f51040100000531a68cbda
-
+      path: /api/test/**
+      url: http://localhost:9000/api/1234
 
   trace-request-body: true
   debug:
     request: true
 
-
 logging.level:
-    com.example: debug
-    org.springframework.cloud.netflix.zuul: warn
+    com.example.ratelimit: debug
+    org.springframework.cloud.netflix.zuul: debug
 
 gateway:
   enabled: true
@@ -69,4 +67,7 @@ g12:
 
 
 
-
+spring:
+  redis:
+    host: localhost
+    port: 6379

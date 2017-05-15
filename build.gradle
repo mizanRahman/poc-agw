@@ -1,60 +1,75 @@
 buildscript {
-	ext {
-		springBootVersion = '1.4.3.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.4.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
 
 jar {
-	baseName = 'gateway'
-	version = '1.0'
+    baseName = 'gateway'
+    version = '1.0'
 }
 
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
-configurations {
-//	compile.exclude module: "spring-boot-starter-tomcat"
-}
+//configurations {
+//    compile.exclude module: "spring-boot-starter-tomcat"
+//}
 
 ext {
-	bootVersion = '1.5.2.RELEASE'
+    bootVersion = '1.5.2.RELEASE'
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-security')
 //	compile("org.springframework.boot:spring-boot-starter-jetty:1.5.2.RELEASE")
-//	compile("org.springframework.boot:spring-boot-starter-undertow:${bootVersion}")
+//    compile("org.springframework.boot:spring-boot-starter-undertow:${bootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-redis")
 
-	compile('org.springframework.cloud:spring-cloud-starter-zuul')
+    compile('org.springframework.cloud:spring-cloud-starter-zuul')
 
-	compile('org.springframework.boot:spring-boot-starter-actuator')
-	runtime('com.h2database:h2')
-	compile('org.projectlombok:lombok')
-	compile('com.jayway.jsonpath:json-path:2.1.0')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    runtime('com.h2database:h2')
+    compile('org.projectlombok:lombok')
+    compile('com.jayway.jsonpath:json-path:2.1.0')
 
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 springBoot {
-	executable = true
+    executable = true
 }
 
 dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR4"
-	}
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR4"
+    }
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+    push = false
+    applicationName = jar.baseName
+    dockerfile = file('src/main/docker/Dockerfile')
+    doFirst {
+        copy {
+            from jar
+            into stageDir
+        }
+    }
 }

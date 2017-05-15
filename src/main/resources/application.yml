@@ -1,6 +1,9 @@
 server:
   port: 9000
-
+  undertow:
+    accesslog:
+      dir: undertow_log
+      enabled: true
 
 zuul:
   ignored-services: "*"

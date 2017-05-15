@@ -43,16 +43,18 @@ public class ErrorResponseDecoratorFilter extends ZuulFilter {
 
     @Override
     public int filterOrder() {
-        return Integer.MIN_VALUE;
+        return 100;
     }
 
     @Override
     public boolean shouldFilter() {
-        RequestContext ctx = RequestContext.getCurrentContext();
-        HttpStatus status = HttpStatus.valueOf(ctx.getResponse().getStatus());
-        log.info(status.toString());
+//        RequestContext ctx = RequestContext.getCurrentContext();
+//        HttpStatus status = HttpStatus.valueOf(ctx.getResponse().getStatus());
+//        log.info(status.toString());
+//
+//        return status.is4xxClientError();
 
-        return status.is4xxClientError();
+        return false;
     }
 
     @Override
@@ -85,17 +87,27 @@ public class ErrorResponseDecoratorFilter extends ZuulFilter {
         ErrorResponse errorResponse = null;
 
         KMService kmService = KMService.MAP;
+        String ok = ctx.getResponseBody();
+        log.info("response body1: {} {}",ok, ctx.getResponseBody());
         String responseBody = ctx.getResponseBody();
+        log.info("response body2: {} {} {}", responseBody, ok, ctx.getResponseBody());
         if (responseBody == null) {
             InputStream is = ctx.getResponseDataStream();
-            responseBody = IOUtils.toString(is);
+            log.info("response body3: {}", ctx.getResponseBody());
+            String x = IOUtils.toString(ctx.getResponseDataStream());
+            ctx.setResponseBody(x);
+            responseBody = IOUtils.toString(ctx.getResponseDataStream());
+            log.info("response body4:{} {}", responseBody, ctx.getResponseBody());
         }
 
         DocumentContext documentContext = JsonPath.parse(responseBody);
+        log.info("response body5: {}", ctx.getResponseBody());
 
 
 
         errorResponse = getRegularResponse(documentContext);
+        log.info("response body6: {}", ctx.getResponseBody());
+
         if (errorResponse != null) {
             log.debug("regular response: {}", ctx.getResponseBody());
             return errorResponse;
@@ -129,7 +141,7 @@ public class ErrorResponseDecoratorFilter extends ZuulFilter {
             String reason = documentContext.read("$.reasonCode");
             String message = documentContext.read("$.message");
             String status = documentContext.read("$.status");
-            return ErrorResponse.of(reason, message);
+            return ErrorResponse.of(reason+" hello", message);
         } catch (PathNotFoundException e) {
             return null;
         }

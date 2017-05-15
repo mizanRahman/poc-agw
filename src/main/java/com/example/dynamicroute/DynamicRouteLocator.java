@@ -1,4 +1,4 @@
-package com.example.filter;
+package com.example.dynamicroute;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +16,17 @@ import java.util.Map;
 @Slf4j
 public class DynamicRouteLocator extends SimpleRouteLocator implements RefreshableRouteLocator {
 
+    @Autowired
+    ZuulRouteStore zuulRouteStore;
+
+
     public DynamicRouteLocator(String servletPath, ZuulProperties properties) {
         super(servletPath, properties);
     }
 
     @Override
     protected Map<String, ZuulProperties.ZuulRoute> locateRoutes() {
+
         Map<String, ZuulProperties.ZuulRoute> routes = new HashMap<String, ZuulProperties.ZuulRoute>();
         routes.putAll(super.locateRoutes());
 

@@ -27,16 +27,12 @@ public class ResponseDecoratorFilter extends ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        return true;
+        return false;
     }
 
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
-        log.info("error response filter--mizan");
-
-
-
 
         ctx.getResponse().setHeader("X-KM-ProcessingEnd", String.valueOf(System.currentTimeMillis()));
         ctx.getResponse().setHeader("X-KM-Instance-Name", System.getenv("instance.name"));
